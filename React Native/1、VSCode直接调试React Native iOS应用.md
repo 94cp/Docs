@@ -8,7 +8,7 @@
 
 * 现在，你仅需要一个VSCode就可以开发、调试React Native应用。
 
- ![](./Screenshots/vscode_debugging.PNG)
+ ![](https://github.com/cp110/Docs/blob/master/React%20Native/Screenshots/vscode_debugging.png)
 
 ### 2.1. 具体步骤：
 
