@@ -36,7 +36,7 @@ export default class App extends Component {
 
 |   图1  |  图2  |
 |  ----  | ----  |
-| ![](./Screenshots/textInput_bug1.PNG) | ![](./Screenshots/textInput_bug2.PNG) |
+| ![textInput_bug1](https://github.com/cp110/Docs/blob/master/React%20Native/Screenshots/textInput_bug1.png) | ![textInput_bug2](https://github.com/cp110/Docs/blob/master/React%20Native/Screenshots/textInput_bug2.png) |
 
 # 2.分析问题
 
