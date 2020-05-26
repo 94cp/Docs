@@ -8,7 +8,7 @@
 
 我们也可以通过自定义注解的方式来简化一些模板化代码的编写。
 
-详见另外一篇文档[《Annotation》](https://github.com/cp110/Docs/blob/master/Flutter/foundation/Annotation.md)
+详见另外一篇文档[《Annotation》](https://github.com/cp110/Docs/blob/master/Flutter/foundation/Annotation.md)。
 
 - [ ] ### assertions
 
