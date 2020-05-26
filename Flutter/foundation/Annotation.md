@@ -197,7 +197,7 @@ String _$UserToString(User obj) {
 }
 ```
 
-**详见[to_string_annotation](https://github.com/cp110/Docs/tree/master/Flutter/Example/to_string_annotation)**
+**详见[to_string_annotation](https://github.com/cp110/Docs/tree/master/Flutter/foundation/Example/to_string_annotation)**
 
 ### 5. 总结
 
