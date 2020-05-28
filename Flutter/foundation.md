@@ -12,7 +12,19 @@
 
 - [ ] ## assertions
 
-- [ ] ## basic_types
+## basic_types
+
+定义了基础的一些函数别名、缓存迭代器和类工厂。
+
+1. 函数别名
+   - 同步：`VoidCallback`、`ValueChanged<T>`、`ValueSetter<T>`、`ValueGetter<T>`、`IterableFilter<T>`
+   - 异步：`AsyncCallback`、`AsyncValueSetter<T>`、 `AsyncValueGetter<T>`
+
+2. 缓存迭代器（CachingIterable<E>）
+   - 优点：
+     1. 
+   - 缺点：
+3. 类工厂
 
 - [ ] ## binding
 
