@@ -86,7 +86,7 @@ class _SingleCanvasPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    var paint = Paint()
+    Paint paint = Paint()
       ..isAntiAlias = true //抗锯齿
       ..style = PaintingStyle.stroke //画笔样式
       ..color = Colors.green //画笔颜色
