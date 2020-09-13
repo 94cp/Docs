@@ -36,7 +36,7 @@ Paint paint = Paint() //创建一个画笔并配置其属性
 
 ### 2 简单绘图示例
 
-![sample](/Users/chenp/Desktop/sample.png)
+![sample](https://github.com/cp110/Docs/blob/master/Flutter/other/Canvas/Screenshots/sample.png)
 
 ```dart
 Paint paint = Paint()
@@ -99,7 +99,7 @@ canvas.drawPath(path, paint);
 
 #### 3.1 心形
 
-![heart1](/Users/chenp/Desktop/heart1.png)
+![heart1](https://github.com/cp110/Docs/blob/master/Flutter/other/Canvas/Screenshots/heart1.png)
 
 ```dart
 /// 心形公式1：{x = 16sin^3(t), y = 13cos(t) - 5cos(2t) - 2cos(3t) - cos(4t)}, t = [0, 2π]
@@ -134,7 +134,7 @@ List<Offset> heart1(
 
 #### 3.2 心形
 
-![heart2](/Users/chenp/Desktop/heart2.png)
+![heart2](https://github.com/cp110/Docs/blob/master/Flutter/other/Canvas/Screenshots/heart2.png)
 
 ```dart
 /// 心形公式2：x^2 + (y - (x^2)^(1/3))^2 = 1, x = [-1, 1]
@@ -197,7 +197,7 @@ List<Offset> heart2(
 
 #### 3.3 树形
 
-![tree1](/Users/chenp/Desktop/tree1.png)
+![tree1](./Screenshots/tree1.png)
 
 ```dart
 // 分形树1
