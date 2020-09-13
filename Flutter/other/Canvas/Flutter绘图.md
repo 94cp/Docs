@@ -2,6 +2,8 @@
 
 在Flutter中，提供了一个`CustomPaint` 组件，它可以结合画笔`CustomPainter`来实现2D图形绘制。并且也提供了`Canvas`类，封装了一些基本绘制的API方法。
 
+![HeartTree]([HeartTree.png](https://github.com/cp110/Docs/blob/master/Flutter/other/Canvas/Screenshots/HeartTree.png))
+
 ### 1 常用类
 
 #### 1.1 CustomPaint
@@ -197,7 +199,7 @@ List<Offset> heart2(
 
 #### 3.3 树形
 
-![tree1](./Screenshots/tree1.png)
+![tree1](https://github.com/cp110/Docs/blob/master/Flutter/other/Canvas/Screenshots/tree1.png)
 
 ```dart
 // 分形树1
@@ -246,7 +248,7 @@ void drawTree(Canvas canvas, Paint paint, int depth, double length,
 
 #### 3.4 树形
 
-![tree2](/Users/chenp/Desktop/tree2.png)
+![tree2](https://github.com/cp110/Docs/blob/master/Flutter/other/Canvas/Screenshots/tree2.png)
 
 ```dart
 // 分形树2(贴近自然树形态)
@@ -295,7 +297,7 @@ void drawTree(
 
 #### 3.5 树形
 
-![tree3](/Users/chenp/Desktop/tree3.png)
+![tree3](https://github.com/cp110/Docs/blob/master/Flutter/other/Canvas/Screenshots/tree3.png)
 
 ```dart
 // 分形树3
@@ -325,7 +327,7 @@ void drawTree(
 
 #### 3.6 树
 
-![tree4](/Users/chenp/Desktop/tree4.png)
+![tree4](https://github.com/cp110/Docs/blob/master/Flutter/other/Canvas/Screenshots/tree4.png)
 
 ```dart
 // 分形树4
@@ -368,7 +370,7 @@ void drawTree(Canvas canvas, Paint paint, Offset root, double length,
 
 #### 3.7 树
 
-![tree5](/Users/chenp/Desktop/tree5.png)
+![tree5](https://github.com/cp110/Docs/blob/master/Flutter/other/Canvas/Screenshots/tree5.png)
 
 ```dart
 // 分形树5-随机LS文法
@@ -418,4 +420,4 @@ void befehl(String ch, Canvas canvas, Paint paint) {
 
 ### 4 组合绘图
 
-![heart_tree](/Users/chenp/Desktop/heart_tree.png)
+![heart_tree](https://github.com/cp110/Docs/blob/master/Flutter/other/Canvas/Screenshots/heart_tree.png)
