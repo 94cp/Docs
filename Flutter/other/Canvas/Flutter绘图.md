@@ -2,6 +2,8 @@
 
 在Flutter中，提供了一个`CustomPaint` 组件，它可以结合画笔`CustomPainter`来实现2D图形绘制。并且也提供了`Canvas`类，封装了一些基本绘制的API方法。
 
+本文将会讲解Flutter绘图的基本方法，以及教大家通过纯代码一步步实现👇下面的心形树。
+
 ![HeartTree](https://github.com/cp110/Docs/blob/master/Flutter/other/Canvas/Screenshots/HeartTree.png)
 
 ### 1 常用类
@@ -457,4 +459,5 @@ bool inHeart(double x, double y, double radius) {
 
 自绘控件功能非常强大，理论上可以实现任何2D图形外观，实际上Flutter提供的所有组件最终都是通过调用Canvas绘制出来的，只不过绘制的逻辑被封装起来了，有兴趣可以查看具有外观样式的组件源码，找到其对应的`RenderObject`对象，如`Text`对应的`RenderParagraph`对象最终会通过`Canvas`实现文本绘制逻辑。
 
-ps：[具体实现点这里](https://github.com/cp110/Docs/tree/master/Flutter/other/Canvas/Example/flutter_canvas)
+[ps：具体实现点这里](https://github.com/cp110/Docs/tree/master/Flutter/other/Canvas/Example/flutter_canvas)
+
