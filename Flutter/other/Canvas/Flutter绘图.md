@@ -2,7 +2,7 @@
 
 在Flutter中，提供了一个`CustomPaint` 组件，它可以结合画笔`CustomPainter`来实现2D图形绘制。并且也提供了`Canvas`类，封装了一些基本绘制的API方法。
 
-![HeartTree]([HeartTree.png](https://github.com/cp110/Docs/blob/master/Flutter/other/Canvas/Screenshots/HeartTree.png))
+![HeartTree](https://github.com/cp110/Docs/blob/master/Flutter/other/Canvas/Screenshots/HeartTree.png)
 
 ### 1 常用类
 
