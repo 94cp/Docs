@@ -99,7 +99,11 @@ canvas.drawPath(path, paint);
 
 ### 3 复杂绘图示例
 
-#### 3.1 心形
+#### 3.1 心形1
+
+**心形公式：{x = 16sin^3(t), y = 13cos(t) - 5cos(2t) - 2cos(3t) - cos(4t)}, t = [0, 2π]**
+
+使用心形公式计算出心形图案每个点的位置，然后绘制所有点即可。
 
 ![heart1](https://github.com/cp110/Docs/blob/master/Flutter/other/Canvas/Screenshots/heart1.png)
 
@@ -134,7 +138,9 @@ List<Offset> heart1(
 
 ```
 
-#### 3.2 心形
+#### 3.2 心形2
+
+**心形公式：x^2 + (y - (x^2)^(1/3))^2 = 1, x = [-1, 1]**
 
 ![heart2](https://github.com/cp110/Docs/blob/master/Flutter/other/Canvas/Screenshots/heart2.png)
 
@@ -197,7 +203,9 @@ List<Offset> heart2(
 }
 ```
 
-#### 3.3 树形
+#### 3.3 分形树1
+
+自然界的树一般是一根主干生长出2个侧干，每个侧干又生长出2个侧干，这样的生长结构，类似于的程序的递归算法。分形树正是使用递归算法实现的。
 
 ![tree1](https://github.com/cp110/Docs/blob/master/Flutter/other/Canvas/Screenshots/tree1.png)
 
@@ -246,7 +254,7 @@ void drawTree(Canvas canvas, Paint paint, int depth, double length,
 }
 ```
 
-#### 3.4 树形
+#### 3.4 分形树2
 
 ![tree2](https://github.com/cp110/Docs/blob/master/Flutter/other/Canvas/Screenshots/tree2.png)
 
@@ -295,7 +303,7 @@ void drawTree(
 }
 ```
 
-#### 3.5 树形
+#### 3.5 分形树3
 
 ![tree3](https://github.com/cp110/Docs/blob/master/Flutter/other/Canvas/Screenshots/tree3.png)
 
@@ -325,7 +333,7 @@ void drawTree(
 }
 ```
 
-#### 3.6 树
+#### 3.6 分形树4
 
 ![tree4](https://github.com/cp110/Docs/blob/master/Flutter/other/Canvas/Screenshots/tree4.png)
 
@@ -368,7 +376,9 @@ void drawTree(Canvas canvas, Paint paint, Offset root, double length,
 }
 ```
 
-#### 3.7 树
+#### 3.7 分形树5
+
+本分形树原理不同与上面所述的分形树，采用了LS文法。自然界树的形态千变万化，上面所述的分形树形态都比较固定，而本分形树通过在LS文法中引入随机值，使得分形树形态更加多样化。
 
 ![tree5](https://github.com/cp110/Docs/blob/master/Flutter/other/Canvas/Screenshots/tree5.png)
 
@@ -384,21 +394,21 @@ void drawTree(Canvas canvas, Paint paint, Offset root, double length,
 //
 void befehl(String ch, Canvas canvas, Paint paint) {
   switch (ch) {
-    case 'F':
+    case 'F':// 当前方向前进一步，并画线
       turtle.pen = true;
       turtle.move(canvas, paint, length);
       break;
-    case 'f':
+    case 'f':// 当前方向前进一步，不画线
       turtle.pen = false;
       turtle.move(canvas, paint, length);
       break;
-    case '+':
+    case '+':// 逆时针旋转angle
       turtle.turn(angle);
       break;
-    case '-':
+    case '-':// 顺时针旋转angle
       turtle.turn(-angle);
       break;
-    case '[': // push
+    case '[': // push，压栈
       last.nach = Staple();
       last.nach.vor = last;
       last = last.nach;
@@ -406,7 +416,7 @@ void befehl(String ch, Canvas canvas, Paint paint) {
       last.y = turtle.yPos;
       last.angle = turtle.angle;
       break;
-    case ']': // pop
+    case ']': // pop，出栈
       turtle.xPos = last.x;
       turtle.yPos = last.y;
       turtle.angle = last.angle;
@@ -418,6 +428,33 @@ void befehl(String ch, Canvas canvas, Paint paint) {
 }
 ```
 
-### 4 组合绘图
+### 4 组合绘图-心形树
+
+现在，回到一开始说的，如何绘制一颗心形树？在Flutter当中，如果需要封装一些组件时，应该优先考虑是否可以通过组合其它组件来实现，如果可以，则应优先使用组合。因此我们直接通过上述的心形和分形树组合即可实现心形树。
 
 ![heart_tree](https://github.com/cp110/Docs/blob/master/Flutter/other/Canvas/Screenshots/heart_tree.png)
+
+```dart
+/// 判断当前坐标是否在心形图案内
+bool inHeart(double x, double y, double radius) {
+  // x^2+(y-(x^2)^(1/3))^2 = 1
+  var z = ((x / radius) * (x / radius) + (y / radius) * (y / radius) - 1) *
+          ((x / radius) * (x / radius) + (y / radius) * (y / radius) - 1) *
+          ((x / radius) * (x / radius) + (y / radius) * (y / radius) - 1) -
+      (x / radius) * (x / radius) * (y / radius) * (y / radius) * (y / radius);
+  return z < 0;
+}
+```
+
+### 5 注意点
+
+- 利用好`shouldRepaint`返回值可以减少不必要的重绘开销，提高性能。
+- 绘图尽可能分多层绘制：这样可以减少一些不怎么改变的图层的重绘操作，提高性能。
+- 优先使用现有组件组装成新组件。
+- 绘制图片时需要注意使用的是`dart:ui`的`Image`，不是`material`中的`Image`
+
+### 6 总结
+
+自绘控件功能非常强大，理论上可以实现任何2D图形外观，实际上Flutter提供的所有组件最终都是通过调用Canvas绘制出来的，只不过绘制的逻辑被封装起来了，有兴趣可以查看具有外观样式的组件源码，找到其对应的`RenderObject`对象，如`Text`对应的`RenderParagraph`对象最终会通过`Canvas`实现文本绘制逻辑。
+
+ps：[具体实现点这里](https://github.com/cp110/Docs/tree/master/Flutter/other/Canvas/Example/flutter_canvas)
