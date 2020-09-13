@@ -12,3 +12,5 @@
 ## Flutter
 
 ### 1. [foundation](https://github.com/cp110/Docs/blob/master/Flutter/foundation.md)
+### 2. [Flutter注解](https://github.com/cp110/Docs/blob/master/Flutter/foundation/Annotation.md)
+### 3. [Flutter绘图](https://github.com/cp110/Docs/blob/master/Flutter/other/Canvas/Flutter%E7%BB%98%E5%9B%BE.md)
