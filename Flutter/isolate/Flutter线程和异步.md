@@ -91,7 +91,7 @@ JVM vs Dart VM：
 
 与JVM内存模型不同的是，`dart`中每个`Isolate`都有自己的独立的堆栈内存空间，其各自的GC不会影响到其他`Isolate`的。所以我们可以通过把部分占用内存空间较大且生命周期较短的对象方法其他`Isolate`中，这样即使另外一个`Isolate` GC了，并不会对我们显示UI的`Isolate`造成影响。
 
-[JVM vs Dart VM](https://github.com/cp110/Docs/blob/master/Flutter/isolate/Screenshots/jvm_dvm.jpg)
+![JVM vs Dart VM](https://github.com/cp110/Docs/blob/master/Flutter/isolate/Screenshots/jvm_dvm.jpg)
 
 `Isolate`带来的好处显而易见，我们无需考虑与`OC`、`Java`等语言的加锁操作，不会影响UI线程，但也带来了新的问题，`Isolate`间的数据如何共享？答案是`ReceivePort`。
 
