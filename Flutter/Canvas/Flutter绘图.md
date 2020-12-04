@@ -4,7 +4,7 @@
 
 本文将会讲解Flutter绘图的基本方法，以及教大家通过*纯代码*一步步**画出**👇下面的**心形树**。
 
-![HeartTree](https://github.com/cp110/Docs/blob/master/Flutter/other/Canvas/Screenshots/HeartTree.png)
+![HeartTree](https://github.com/cp110/Docs/blob/master/Flutter/Canvas/Screenshots/HeartTree.png)
 
 ### 1 常用类
 
@@ -40,7 +40,7 @@ Paint paint = Paint() //创建一个画笔并配置其属性
 
 ### 2 简单绘图示例
 
-![sample](https://github.com/cp110/Docs/blob/master/Flutter/other/Canvas/Screenshots/sample.png)
+![sample](https://github.com/cp110/Docs/blob/master/Flutter/Canvas/Screenshots/sample.png)
 
 ```dart
 Paint paint = Paint()
@@ -107,7 +107,7 @@ canvas.drawPath(path, paint);
 
 使用心形公式计算出心形图案每个点的位置，然后绘制所有点即可。
 
-![heart1](https://github.com/cp110/Docs/blob/master/Flutter/other/Canvas/Screenshots/heart1.png)
+![heart1](https://github.com/cp110/Docs/blob/master/Flutter/Canvas/Screenshots/heart1.png)
 
 ```dart
 /// 心形公式1：{x = 16sin^3(t), y = 13cos(t) - 5cos(2t) - 2cos(3t) - cos(4t)}, t = [0, 2π]
@@ -144,7 +144,7 @@ List<Offset> heart1(
 
 **心形公式：x^2 + (y - (x^2)^(1/3))^2 = 1, x = [-1, 1]**
 
-![heart2](https://github.com/cp110/Docs/blob/master/Flutter/other/Canvas/Screenshots/heart2.png)
+![heart2](https://github.com/cp110/Docs/blob/master/Flutter/Canvas/Screenshots/heart2.png)
 
 ```dart
 /// 心形公式2：x^2 + (y - (x^2)^(1/3))^2 = 1, x = [-1, 1]
@@ -209,7 +209,7 @@ List<Offset> heart2(
 
 自然界的树一般是一根主干生长出2个侧干，每个侧干又生长出2个侧干，这样的生长结构，类似于的程序的递归算法。分形树正是使用递归算法实现的。
 
-![tree1](https://github.com/cp110/Docs/blob/master/Flutter/other/Canvas/Screenshots/tree1.png)
+![tree1](https://github.com/cp110/Docs/blob/master/Flutter/Canvas/Screenshots/tree1.png)
 
 ```dart
 // 分形树1
@@ -258,7 +258,7 @@ void drawTree(Canvas canvas, Paint paint, int depth, double length,
 
 #### 3.4 分形树2
 
-![tree2](https://github.com/cp110/Docs/blob/master/Flutter/other/Canvas/Screenshots/tree2.png)
+![tree2](https://github.com/cp110/Docs/blob/master/Flutter/Canvas/Screenshots/tree2.png)
 
 ```dart
 // 分形树2(贴近自然树形态)
@@ -307,7 +307,7 @@ void drawTree(
 
 #### 3.5 分形树3
 
-![tree3](https://github.com/cp110/Docs/blob/master/Flutter/other/Canvas/Screenshots/tree3.png)
+![tree3](https://github.com/cp110/Docs/blob/master/Flutter/Canvas/Screenshots/tree3.png)
 
 ```dart
 // 分形树3
@@ -337,7 +337,7 @@ void drawTree(
 
 #### 3.6 分形树4
 
-![tree4](https://github.com/cp110/Docs/blob/master/Flutter/other/Canvas/Screenshots/tree4.png)
+![tree4](https://github.com/cp110/Docs/blob/master/Flutter/Canvas/Screenshots/tree4.png)
 
 ```dart
 // 分形树4
@@ -382,7 +382,7 @@ void drawTree(Canvas canvas, Paint paint, Offset root, double length,
 
 本分形树原理不同与上面所述的分形树，采用了LS文法。自然界树的形态千变万化，上面所述的分形树形态都比较固定，而本分形树通过在LS文法中引入随机值，使得分形树形态更加多样化。
 
-![tree5](https://github.com/cp110/Docs/blob/master/Flutter/other/Canvas/Screenshots/tree5.png)
+![tree5](https://github.com/cp110/Docs/blob/master/Flutter/Canvas/Screenshots/tree5.png)
 
 ```dart
 // 分形树5-随机LS文法
@@ -434,7 +434,7 @@ void befehl(String ch, Canvas canvas, Paint paint) {
 
 现在，回到一开始说的，如何绘制一颗心形树？在Flutter当中，如果需要封装一些组件时，应该优先考虑是否可以通过组合其它组件来实现，如果可以，则应优先使用组合。因此我们直接通过上述的心形和分形树组合即可实现心形树。
 
-![heart_tree](https://github.com/cp110/Docs/blob/master/Flutter/other/Canvas/Screenshots/heart_tree.png)
+![heart_tree](https://github.com/cp110/Docs/blob/master/Flutter/Canvas/Screenshots/heart_tree.png)
 
 ```dart
 /// 判断当前坐标是否在心形图案内
@@ -459,5 +459,5 @@ bool inHeart(double x, double y, double radius) {
 
 自绘控件功能非常强大，理论上可以实现任何2D图形外观，实际上Flutter提供的所有组件最终都是通过调用Canvas绘制出来的，只不过绘制的逻辑被封装起来了，有兴趣可以查看具有外观样式的组件源码，找到其对应的`RenderObject`对象，如`Text`对应的`RenderParagraph`对象最终会通过`Canvas`实现文本绘制逻辑。
 
-[ps：具体实现点这里](https://github.com/cp110/Docs/tree/master/Flutter/other/Canvas/Example/flutter_canvas)
+[ps：具体实现点这里](https://github.com/cp110/Docs/tree/master/Flutter/Canvas/Example/flutter_canvas)
 
