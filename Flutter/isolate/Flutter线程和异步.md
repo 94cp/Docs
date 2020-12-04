@@ -195,3 +195,6 @@ void _computeFibonacciCalculate() async {
 - Json解析：当解析一个庞大的 json时，建议使用`compute`
 - 加密、信号处理：如果涉及计算密集型的数学操作，建议使用`compute`
 - 图片或文件加载、解码、处理：耗时较多时，建议使用`Isolate`
+
+
+[ps：具体实现点这里](https://github.com/cp110/Docs/tree/master/Flutter/isolate/Example/flutter_isolate)
