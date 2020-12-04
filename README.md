@@ -17,5 +17,5 @@
 
 ### 1. [foundation](https://github.com/cp110/Docs/blob/master/Flutter/foundation.md)
 ### 2. [Flutter注解](https://github.com/cp110/Docs/blob/master/Flutter/foundation/Annotation.md)
-### 3. [Flutter绘图](https://github.com/cp110/Docs/blob/master/Flutter/other/Canvas/Flutter%E7%BB%98%E5%9B%BE.md)
-### 4.[Flutter线程和异步]()
+### 3. [Flutter绘图](https://github.com/cp110/Docs/blob/master/Flutter/Canvas/Flutter%E7%BB%98%E5%9B%BE.md)
+### 4. [Flutter线程和异步](https://github.com/cp110/Docs/blob/master/Flutter/isolate/Flutter%E7%BA%BF%E7%A8%8B%E5%92%8C%E5%BC%82%E6%AD%A5.md)
